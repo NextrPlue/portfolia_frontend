@@ -50,33 +50,33 @@ const MainLandingPage = () => {
   const featuredPortfolios = [
     {
       id: 1,
-      title: "AI 기반 개인화 학습 플랫폼",
-      author: "김개발",
+      title: "보안을 중시하는 백엔드 개발자",
+      author: "김보안",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["React", "Node.js", "TensorFlow"],
+      tags: ["Spring Boot", "PostgreSQL", "Redis", "AWS", "Docker"],
       score: 95,
       views: 2847,
-      likes: 156
+      likes: 156,
     },
     {
       id: 2,
-      title: "실시간 협업 도구",
-      author: "박협업", 
+      title: "확장성을 고려하는 풀스택 개발자",
+      author: "박확장",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Vue.js", "Socket.io", "MongoDB"],
+      tags: ["React", "Node.js", "MongoDB", "Kubernetes", "GraphQL"],
       score: 92,
       views: 1923,
-      likes: 134
+      likes: 134,
     },
     {
       id: 3,
-      title: "블록체인 투표 시스템",
-      author: "이블록",
-      thumbnail: "/api/placeholder/300/200", 
-      tags: ["Solidity", "Web3.js", "React"],
+      title: "사용자 경험을 우선하는 프론트엔드 개발자",
+      author: "이경험",
+      thumbnail: "/api/placeholder/300/200",
+      tags: ["React", "TypeScript", "Next.js", "Tailwind", "Figma"],
       score: 89,
       views: 1654,
-      likes: 98
+      likes: 98,
     }
   ];
 

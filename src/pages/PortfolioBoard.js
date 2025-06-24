@@ -28,119 +28,119 @@ const PortfolioBoard = () => {
   const [portfolios] = useState([
     {
       id: 1,
-      title: "AI 기반 개인화 학습 플랫폼",
-      author: "김개발",
+      title: "보안을 중시하는 백엔드 개발자",
+      author: "김보안",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["React", "Node.js", "TensorFlow", "MongoDB"],
+      tags: ["Spring Boot", "PostgreSQL", "Redis", "AWS", "Docker"],
       score: 95,
       views: 2847,
       likes: 156,
-      category: "ai",
+      category: "backend",
       createdAt: "2025-06-20",
-      description: "머신러닝을 활용한 개인화된 학습 경험을 제공하는 플랫폼입니다."
+      description: "5년차 백엔드 개발자로 금융권 서비스의 보안성과 안정성을 책임지며, 대용량 트래픽 처리 경험이 풍부합니다."
     },
     {
       id: 2,
-      title: "실시간 협업 도구",
-      author: "박협업", 
+      title: "확장성을 고려하는 풀스택 개발자",
+      author: "박확장", 
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Vue.js", "Socket.io", "Redis", "Express"],
+      tags: ["React", "Node.js", "MongoDB", "Kubernetes", "GraphQL"],
       score: 92,
       views: 1923,
       likes: 134,
-      category: "web",
+      category: "fullstack",
       createdAt: "2025-06-18",
-      description: "팀 협업을 위한 실시간 문서 편집 및 커뮤니케이션 도구입니다."
+      description: "스타트업에서 MVP부터 대규모 서비스까지 확장 가능한 아키텍처 설계와 구현을 전담해온 풀스택 개발자입니다."
     },
     {
       id: 3,
-      title: "블록체인 투표 시스템",
-      author: "이블록",
+      title: "사용자 경험을 우선하는 프론트엔드 개발자",
+      author: "이경험",
       thumbnail: "/api/placeholder/300/200", 
-      tags: ["Solidity", "Web3.js", "React", "IPFS"],
+      tags: ["React", "TypeScript", "Next.js", "Tailwind", "Figma"],
       score: 89,
       views: 1654,
       likes: 98,
-      category: "blockchain",
+      category: "frontend",
       createdAt: "2025-06-15",
-      description: "투명하고 안전한 블록체인 기반 전자 투표 시스템입니다."
+      description: "사용자 중심의 인터페이스 설계와 성능 최적화를 통해 우수한 사용자 경험을 제공하는 프론트엔드 전문가입니다."
     },
     {
       id: 4,
-      title: "모바일 헬스케어 앱",
-      author: "최건강",
+      title: "데이터 기반 의사결정을 추구하는 개발자",
+      author: "최데이터",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["React Native", "Firebase", "TensorFlow Lite"],
+      tags: ["Python", "TensorFlow", "Apache Spark", "Airflow", "BigQuery"],
       score: 88,
       views: 2156,
       likes: 167,
-      category: "mobile",
+      category: "data",
       createdAt: "2025-06-12",
-      description: "AI를 활용한 개인 맞춤형 건강 관리 모바일 애플리케이션입니다."
+      description: "머신러닝과 데이터 파이프라인을 통해 비즈니스 가치를 창출하고, 데이터 기반 의사결정을 지원합니다."
     },
     {
       id: 5,
-      title: "실시간 주식 분석 대시보드",
-      author: "정투자",
+      title: "클린 코드를 추구하는 시니어 개발자",
+      author: "정클린",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Python", "Django", "D3.js", "PostgreSQL"],
+      tags: ["Java", "Spring", "JUnit", "SonarQube", "Jenkins"],
       score: 91,
       views: 1789,
       likes: 142,
-      category: "data",
+      category: "backend",
       createdAt: "2025-06-10",
-      description: "실시간 주식 데이터 분석 및 시각화 대시보드입니다."
+      description: "8년차 시니어 개발자로 코드 품질과 팀 문화 개선을 통해 지속 가능한 개발 환경을 구축합니다."
     },
     {
       id: 6,
-      title: "게임 개발 포트폴리오",
-      author: "김게임",
+      title: "모바일 네이티브 전문 개발자",
+      author: "김모바일",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Unity", "C#", "Blender", "Photon"],
+      tags: ["Swift", "Kotlin", "Flutter", "Firebase", "App Store"],
       score: 86,
       views: 1432,
       likes: 89,
-      category: "game",
+      category: "mobile",
       createdAt: "2025-06-08",
-      description: "Unity를 사용한 3D 액션 게임 개발 포트폴리오입니다."
+      description: "iOS와 Android 네이티브 개발부터 크로스플랫폼까지, 모바일 앱의 전 영역을 아우르는 전문가입니다."
     },
     {
       id: 7,
-      title: "E-커머스 풀스택 프로젝트",
-      author: "송상거래",
+      title: "클라우드 인프라 전문가",
+      author: "송클라우드",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Next.js", "Strapi", "Stripe", "AWS"],
+      tags: ["AWS", "Terraform", "Docker", "Kubernetes", "Prometheus"],
       score: 90,
       views: 2341,
       likes: 178,
-      category: "web",
+      category: "devops",
       createdAt: "2025-06-05",
-      description: "현대적인 기술 스택으로 구현한 완전한 E-커머스 솔루션입니다."
+      description: "안정적이고 효율적인 클라우드 인프라 구축과 운영을 통해 개발팀의 생산성을 극대화합니다."
     },
     {
       id: 8,
-      title: "IoT 스마트홈 시스템",
-      author: "홍스마트",
+      title: "게임 엔진 개발 전문가",
+      author: "홍게임",
       thumbnail: "/api/placeholder/300/200",
-      tags: ["Arduino", "Raspberry Pi", "MQTT", "React"],
+      tags: ["C++", "Unreal Engine", "DirectX", "OpenGL", "Unity"],
       score: 87,
       views: 1567,
       likes: 123,
-      category: "iot",
+      category: "game",
       createdAt: "2025-06-02",
-      description: "IoT 센서와 웹 인터페이스를 결합한 스마트홈 제어 시스템입니다."
+      description: "고성능 게임 엔진 개발과 최적화를 통해 몰입도 높은 게임 경험을 구현하는 전문 개발자입니다."
     }
   ]);
 
   const categories = [
     { value: 'all', label: '전체' },
-    { value: 'web', label: '웹 개발' },
+    { value: 'backend', label: '백엔드' },
+    { value: 'frontend', label: '프론트엔드' },
+    { value: 'fullstack', label: '풀스택' },
     { value: 'mobile', label: '모바일' },
-    { value: 'ai', label: 'AI/ML' },
-    { value: 'blockchain', label: '블록체인' },
-    { value: 'data', label: '데이터 분석' },
-    { value: 'game', label: '게임 개발' },
-    { value: 'iot', label: 'IoT' }
+    { value: 'data', label: '데이터/AI' },
+    { value: 'devops', label: 'DevOps/인프라' },
+    { value: 'game', label: '게임 개발' }
   ];
 
   const sortOptions = [
@@ -192,7 +192,7 @@ const PortfolioBoard = () => {
             <div className={styles.headerText}>
               <h1 className={styles.boardTitle}>포트폴리오 갤러리</h1>
               <p className={styles.boardDescription}>
-                개발자들의 창의적인 프로젝트를 둘러보고 영감을 얻어보세요
+                다양한 개발자들의 전문성과 경험을 살펴보고 인사이트를 발견해보세요
               </p>
             </div>
           </div>
@@ -208,7 +208,7 @@ const PortfolioBoard = () => {
               <Search className={styles.searchIcon} />
               <input
                 type="text"
-                placeholder="프로젝트, 개발자, 기술 스택으로 검색..."
+                placeholder="개발자, 전문 분야, 기술 스택으로 검색..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className={styles.searchInput}

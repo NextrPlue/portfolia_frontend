@@ -1,0 +1,598 @@
+/* Portfolio Detail Styles */
+
+.portfolioDetail {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Main Content */
+.main {
+  padding: 2rem 0;
+}
+
+/* Project Info */
+.projectInfo {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.titleSection {
+  flex: 1;
+}
+
+.projectTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.projectDescription {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.projectMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.metaIcon {
+  color: #9ca3af;
+}
+
+.projectLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.projectLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #111827;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  font-weight: 500;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.projectLink:hover {
+  background-color: #1f2937;
+}
+
+.projectLink:first-child {
+  background-color: #2563eb;
+}
+
+.projectLink:first-child:hover {
+  background-color: #1d4ed8;
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.likeButton:hover {
+  background-color: #fecaca;
+}
+
+.likeButton.liked {
+  background-color: #dc2626;
+  color: white;
+}
+
+/* Section Styles */
+.techStack,
+.detailDescription,
+.features,
+.challenges,
+.pdfViewer {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.sectionIcon {
+  color: #2563eb;
+}
+
+/* Tech Stack */
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.techItem {
+  padding: 0.5rem 1rem;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Detail Description */
+.descriptionContent {
+  line-height: 1.8;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Features */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.featureDescription {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Challenges */
+.challengeList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.challengeItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.challengeProblem,
+.challengeSolution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.challengeProblem h3 {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.challengeSolution h3 {
+  color: #059669;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.challengeProblem p,
+.challengeSolution p {
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* PDF Viewer */
+.pdfHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.pdfControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pdfControlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pdfControlButton:hover:not(:disabled) {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.pdfControlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.scaleIndicator {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.pdfContainer {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #f9fafb;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdfDocument {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+}
+
+.pdfPage {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.pdfNavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.pdfNavButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.pdfNavButton:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.pdfNavButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-weight: 600;
+  color: #374151;
+  min-width: 4rem;
+  text-align: center;
+}
+
+.pdfError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.pdfError svg {
+  width: 3rem;
+  height: 3rem;
+  color: #9ca3af;
+}
+
+.pdfError p {
+  font-weight: 500;
+  color: #374151;
+  margin: 0;
+}
+
+.pdfError small {
+  color: #9ca3af;
+}
+
+.pdfLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.pdfLoading p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* 전체화면 모드 */
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.fullscreenControls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.fullscreenControls button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.fullscreenControls button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fullscreenControls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fullscreenControls span {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .projectHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  
+  .projectLinks {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .projectTitle {
+    font-size: 2rem;
+  }
+  
+  .projectMeta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .projectLinks {
+    flex-direction: column;
+  }
+  
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .challengeItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .techStack,
+  .detailDescription,
+  .features,
+  .challenges,
+  .pdfViewer {
+    padding: 1.5rem;
+  }
+  
+  .projectInfo {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1rem 0;
+  }
+  
+  .projectTitle {
+    font-size: 1.75rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+  
+  /* PDF 뷰어 모바일 최적화 */
+  .pdfHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .pdfControls {
+    justify-content: center;
+  }
+  
+  .pdfContainer {
+    min-height: 400px;
+  }
+  
+  .pdfNavigation {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .fullscreenContent {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .fullscreenControls {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}

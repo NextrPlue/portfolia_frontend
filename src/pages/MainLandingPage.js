@@ -15,11 +15,15 @@ import {
 import Navigation from '../components/Navigation';
 import PortfolioCard from '../components/PortfolioCard';
 import NetworkIcon from '../components/icons/NetworkIcon';
+import PortfolioAPI from '../api/portfolioAPI';
 import styles from './MainLandingPage.module.css';
 
 const MainLandingPage = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
+  const [featuredPortfolios, setFeaturedPortfolios] = useState([]);
+  const [portfoliosLoading, setPortfoliosLoading] = useState(false);
+  const [portfoliosError, setPortfoliosError] = useState(null);
   const [stats, setStats] = useState({
     totalUsers: 12847,
     portfoliosAnalyzed: 45920,
@@ -47,35 +51,39 @@ const MainLandingPage = () => {
     }
   ];
 
-  const featuredPortfolios = [
-    {
-      id: 1,
-      title: "보안을 중시하는 백엔드 개발자",
-      author: "김보안",
-      tags: ["Spring Boot", "PostgreSQL", "Redis", "AWS", "Docker"],
-      score: 95,
-      views: 2847,
-      likes: 156,
-    },
-    {
-      id: 2,
-      title: "확장성을 고려하는 풀스택 개발자",
-      author: "박확장",
-      tags: ["React", "Node.js", "MongoDB", "Kubernetes", "GraphQL"],
-      score: 92,
-      views: 1923,
-      likes: 134,
-    },
-    {
-      id: 3,
-      title: "사용자 경험을 우선하는 프론트엔드 개발자",
-      author: "이경험",
-      tags: ["React", "TypeScript", "Next.js", "Tailwind", "Figma"],
-      score: 89,
-      views: 1654,
-      likes: 98,
+
+
+  // 추천 포트폴리오 가져오기
+  const fetchFeaturedPortfolios = async () => {
+    setPortfoliosLoading(true);
+    setPortfoliosError(null);
+    
+    try {
+      const result = await PortfolioAPI.getPortfolios({
+        sortBy: 'score', // 점수 높은 순으로 정렬
+        limit: 3, // 3개만 가져오기
+        page: 1
+      });
+      
+      if (result.success) {
+        setFeaturedPortfolios(result.data.portfolios);
+      } else {
+        setPortfoliosError(result.error);
+        setFeaturedPortfolios([]);
+      }
+    } catch (err) {
+      console.error('Failed to fetch featured portfolios:', err);
+      setPortfoliosError('추천 포트폴리오를 불러오는데 실패했습니다.');
+      setFeaturedPortfolios([]);
+    } finally {
+      setPortfoliosLoading(false);
     }
-  ];
+  };
+
+  // 컴포넌트 마운트 시 추천 포트폴리오 로드
+  useEffect(() => {
+    fetchFeaturedPortfolios();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -252,16 +260,43 @@ const MainLandingPage = () => {
             </button>
           </div>
 
-          <div className={styles.portfoliosGrid}>
-            {featuredPortfolios.map((portfolio, index) => (
-              <PortfolioCard
-                key={portfolio.id}
-                portfolio={portfolio}
-                showRank={true}
-                rank={index + 1}
-              />
-            ))}
-          </div>
+          {/* 로딩 상태 */}
+          {portfoliosLoading && (
+            <div className={styles.portfoliosLoading}>
+              <div className={styles.loadingSpinner}></div>
+              <p>추천 포트폴리오를 불러오는 중...</p>
+            </div>
+          )}
+
+          {/* 에러 상태 */}
+          {portfoliosError && !portfoliosLoading && (
+            <div className={styles.portfoliosError}>
+              <p className={styles.errorMessage}>{portfoliosError}</p>
+              <button onClick={fetchFeaturedPortfolios} className={styles.retryButton}>
+                다시 시도
+              </button>
+            </div>
+          )}
+
+          {/* 정상 데이터 표시 */}
+          {!portfoliosLoading && !portfoliosError && (
+            <div className={styles.portfoliosGrid}>
+              {featuredPortfolios.length > 0 ? (
+                featuredPortfolios.map((portfolio, index) => (
+                  <PortfolioCard
+                    key={portfolio.id}
+                    portfolio={portfolio}
+                    showRank={true}
+                    rank={index + 1}
+                  />
+                ))
+              ) : (
+                <div className={styles.portfoliosEmpty}>
+                  <p>추천 포트폴리오가 없습니다.</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

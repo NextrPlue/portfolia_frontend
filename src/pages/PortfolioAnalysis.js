@@ -98,13 +98,13 @@ const PortfolioAnalysis = () => {
                   <div className={styles.uploadArea}>
                     <FaUpload className={styles.uploadIcon} />
                     <p className={styles.uploadText}>포트폴리오 파일을 드래그하거나 클릭하여 업로드</p>
-                    <p className={styles.uploadSubtext}>PDF, DOC, PPT 파일 지원 (최대 10MB)</p>
+                    <p className={styles.uploadSubtext}>PDF 파일 지원 (최대 10MB)</p>
                     <input
                       type="file"
                       onChange={handleFileUpload}
                       className={styles.uploadInput}
                       id="file-upload"
-                      accept=".pdf,.doc,.docx,.ppt,.pptx"
+                      accept=".pdf"
                     />
                     <label htmlFor="file-upload" className={styles.uploadButton}>
                       파일 선택

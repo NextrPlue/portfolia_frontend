@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
+import {
   IoSparkles as Sparkles,
   IoChevronForward as ChevronRight,
 } from 'react-icons/io5';
@@ -52,7 +52,6 @@ const MainLandingPage = () => {
       id: 1,
       title: "보안을 중시하는 백엔드 개발자",
       author: "김보안",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["Spring Boot", "PostgreSQL", "Redis", "AWS", "Docker"],
       score: 95,
       views: 2847,
@@ -62,7 +61,6 @@ const MainLandingPage = () => {
       id: 2,
       title: "확장성을 고려하는 풀스택 개발자",
       author: "박확장",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["React", "Node.js", "MongoDB", "Kubernetes", "GraphQL"],
       score: 92,
       views: 1923,
@@ -72,7 +70,6 @@ const MainLandingPage = () => {
       id: 3,
       title: "사용자 경험을 우선하는 프론트엔드 개발자",
       author: "이경험",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["React", "TypeScript", "Next.js", "Tailwind", "Figma"],
       score: 89,
       views: 1654,
@@ -113,11 +110,11 @@ const MainLandingPage = () => {
                 </span>
               </h1>
               <p className={styles.heroDescription}>
-                AI 기술로 포트폴리오를 분석하고, 개인화된 면접 질문을 생성하며, 
+                AI 기술로 포트폴리오를 분석하고, 개인화된 면접 질문을 생성하며,
                 커뮤니티에서 피드백을 받아보세요!
               </p>
               <div className={styles.heroButtons}>
-                <button 
+                <button
                   className={styles.heroButtonPrimary}
                   onClick={() => navigate('/login')}
                 >
@@ -126,7 +123,7 @@ const MainLandingPage = () => {
                 </button>
               </div>
             </div>
-            
+
             <div className={styles.dashboardMockup}>
               {/* 메인 대시보드 목업 */}
               <div className={styles.dashboardCard}>
@@ -136,7 +133,7 @@ const MainLandingPage = () => {
                     우수
                   </span>
                 </div>
-                
+
                 {/* 대시보드 콘텐츠 - 차트와 카테고리를 좌우로 배치 */}
                 <div className={styles.dashboardContent}>
                   {/* 점수 차트 */}
@@ -156,7 +153,7 @@ const MainLandingPage = () => {
                       <span>85</span>
                     </div>
                   </div>
-                  
+
                   {/* 카테고리 점수 */}
                   <div className={styles.categoryScores}>
                     {[
@@ -168,7 +165,7 @@ const MainLandingPage = () => {
                         <span className={styles.categoryName}>{item.name}</span>
                         <div className={styles.categoryScoreRight}>
                           <div className={styles.progressBar}>
-                            <div 
+                            <div
                               className={`${styles.progressFill} ${styles[item.color]}`}
                               style={{width: `${item.score}%`}}
                             ></div>
@@ -212,7 +209,7 @@ const MainLandingPage = () => {
               포트폴리오 성공의 모든 것
             </h2>
             <p className={styles.featuresDescription}>
-              AI 분석부터 면접 준비, 커뮤니티 피드백까지. 
+              AI 분석부터 면접 준비, 커뮤니티 피드백까지.
               개발자 커리어 성장에 필요한 모든 도구를 한 곳에서 만나보세요.
             </p>
           </div>
@@ -246,7 +243,7 @@ const MainLandingPage = () => {
                 높은 점수를 받은 우수한 포트폴리오들을 만나보세요
               </p>
             </div>
-            <button 
+            <button
               className={styles.portfoliosViewAll}
               onClick={() => navigate('/portfolio')}
             >

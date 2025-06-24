@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
+import {
   IoSearch as Search,
   IoFilter as Filter,
   IoAdd as Plus,
@@ -30,7 +30,6 @@ const PortfolioBoard = () => {
       id: 1,
       title: "보안을 중시하는 백엔드 개발자",
       author: "김보안",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["Spring Boot", "PostgreSQL", "Redis", "AWS", "Docker"],
       score: 95,
       views: 2847,
@@ -42,8 +41,7 @@ const PortfolioBoard = () => {
     {
       id: 2,
       title: "확장성을 고려하는 풀스택 개발자",
-      author: "박확장", 
-      thumbnail: "/api/placeholder/300/200",
+      author: "박확장",
       tags: ["React", "Node.js", "MongoDB", "Kubernetes", "GraphQL"],
       score: 92,
       views: 1923,
@@ -56,7 +54,6 @@ const PortfolioBoard = () => {
       id: 3,
       title: "사용자 경험을 우선하는 프론트엔드 개발자",
       author: "이경험",
-      thumbnail: "/api/placeholder/300/200", 
       tags: ["React", "TypeScript", "Next.js", "Tailwind", "Figma"],
       score: 89,
       views: 1654,
@@ -69,7 +66,6 @@ const PortfolioBoard = () => {
       id: 4,
       title: "데이터 기반 의사결정을 추구하는 개발자",
       author: "최데이터",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["Python", "TensorFlow", "Apache Spark", "Airflow", "BigQuery"],
       score: 88,
       views: 2156,
@@ -82,7 +78,6 @@ const PortfolioBoard = () => {
       id: 5,
       title: "클린 코드를 추구하는 시니어 개발자",
       author: "정클린",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["Java", "Spring", "JUnit", "SonarQube", "Jenkins"],
       score: 91,
       views: 1789,
@@ -95,7 +90,6 @@ const PortfolioBoard = () => {
       id: 6,
       title: "모바일 네이티브 전문 개발자",
       author: "김모바일",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["Swift", "Kotlin", "Flutter", "Firebase", "App Store"],
       score: 86,
       views: 1432,
@@ -108,7 +102,6 @@ const PortfolioBoard = () => {
       id: 7,
       title: "클라우드 인프라 전문가",
       author: "송클라우드",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["AWS", "Terraform", "Docker", "Kubernetes", "Prometheus"],
       score: 90,
       views: 2341,
@@ -121,7 +114,6 @@ const PortfolioBoard = () => {
       id: 8,
       title: "게임 엔진 개발 전문가",
       author: "홍게임",
-      thumbnail: "/api/placeholder/300/200",
       tags: ["C++", "Unreal Engine", "DirectX", "OpenGL", "Unity"],
       score: 87,
       views: 1567,
@@ -184,7 +176,7 @@ const PortfolioBoard = () => {
   return (
     <div className={styles.portfolioBoard}>
       <Navigation />
-      
+
       {/* 헤더 섹션 */}
       <section className={styles.boardHeader}>
         <div className={styles.container}>
@@ -218,7 +210,7 @@ const PortfolioBoard = () => {
             {/* 필터 및 정렬 그룹 */}
             <div className={styles.filterSortGroup}>
               {/* 필터 버튼 */}
-              <button 
+              <button
                 className={styles.filterToggle}
                 onClick={() => setShowFilters(!showFilters)}
               >
@@ -228,7 +220,7 @@ const PortfolioBoard = () => {
               </button>
 
               {/* 정렬 옵션 */}
-              <select 
+              <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 className={styles.sortSelect}
@@ -239,7 +231,7 @@ const PortfolioBoard = () => {
                   </option>
                 ))}
               </select>
-              
+
               {/* 업로드 버튼 */}
               <button className={styles.uploadButton}>
                 <Plus />

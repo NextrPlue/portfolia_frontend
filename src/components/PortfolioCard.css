@@ -1,0 +1,170 @@
+/* Portfolio Card Component Styles */
+
+.portfolio-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.portfolio-card-link:hover .portfolio-card {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Portfolio Content */
+.portfolio-content {
+  padding: 1.5rem;
+}
+
+/* 점수와 랭킹 헤더 */
+.portfolio-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* 랭킹이 없을 때 점수를 우측에 배치 */
+.portfolio-score-header.score-only {
+  justify-content: flex-end;
+}
+
+.portfolio-score {
+  background-color: #10b981;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.portfolio-score svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.portfolio-rank {
+  background-color: #374151;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* 제목과 작성자 섹션 */
+.portfolio-title-section {
+  margin-bottom: 1rem;
+}
+
+.portfolio-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.portfolio-author {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.portfolio-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.portfolio-tag-more {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.portfolio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.portfolio-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portfolio-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.portfolio-stat svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.portfolio-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.portfolio-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.portfolio-link:hover {
+  color: #1d4ed8;
+}

@@ -1,0 +1,780 @@
+/* 포트폴리오 분석 페이지 스타일 */
+.portfolioAnalysis {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* 헤더 스타일 - 포트폴리오 갤러리와 유사하게 수정 */
+.analysisHeader {
+  background: linear-gradient(to bottom right, #dbeafe, white, #f3e8ff);
+  padding: 2rem 0;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.headerText {
+  flex: 1;
+}
+
+.analysisTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .analysisTitle {
+    font-size: 2rem;
+  }
+}
+
+.analysisSubtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* 메인 콘텐츠 섹션 */
+.analysisMainSection {
+  padding: 3rem 0;
+  background-color: #f9fafb;
+}
+
+.analysisContent {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .analysisContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Container utilities - 포트폴리오 갤러리와 동일 */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* 업로드 섹션 */
+.uploadSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.uploadCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.uploadTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.uploadArea {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.uploadArea:hover {
+  border-color: #60a5fa;
+}
+
+.uploadIcon {
+  width: 3rem;
+  height: 3rem;
+  color: #9ca3af;
+  margin: 0 auto 1rem;
+}
+
+.uploadText {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.uploadSubtext {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.uploadInput {
+  display: none;
+}
+
+.uploadButton {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.uploadButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* 파일 정보 */
+.fileInfo {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.fileDetails {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fileIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #2563eb;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.fileSize {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* 분석 중 상태 */
+.analyzing {
+  margin-top: 1rem;
+}
+
+.analyzingText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progressBar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #2563eb;
+  width: 60%;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* 통계 카드 */
+.statsCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.statsTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statLabel {
+  color: #6b7280;
+}
+
+.statValue {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* 결과 섹션 */
+.resultsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyState {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 4rem;
+  height: 4rem;
+  color: #d1d5db;
+  margin: 0 auto 1rem;
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  color: #6b7280;
+}
+
+.resultsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 점수 카드 */
+.scoreCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.scoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.scoreTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.downloadButton:hover {
+  color: #1d4ed8;
+}
+
+.scoreContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.scoreCircle {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+}
+
+@media (max-width: 768px) {
+  .scoreCircle {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.circleChart {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.scoreNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (max-width: 768px) {
+  .scoreNumber {
+    font-size: 1.75rem;
+  }
+}
+
+.scoreDetails {
+  flex: 1;
+}
+
+.scoreGrade {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.scoreDescription {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+/* 카테고리 카드 */
+.categoriesCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.categoriesTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.categoriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryName {
+  color: #374151;
+  font-weight: 500;
+}
+
+.categoryScore {
+  color: #111827;
+  font-weight: 600;
+}
+
+.categoryProgress {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.categoryFill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 0.25rem;
+}
+
+.blue { background-color: #3b82f6; }
+.green { background-color: #10b981; }
+.purple { background-color: #8b5cf6; }
+.orange { background-color: #f59e0b; }
+.indigo { background-color: #6366f1; }
+
+/* 피드백 그리드 */
+.feedbackGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .feedbackGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strengthsCard,
+.improvementsCard {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.feedbackHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.feedbackIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.feedbackIcon.success {
+  color: #10b981;
+}
+
+.feedbackIcon.warning {
+  color: #f59e0b;
+}
+
+.feedbackTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.feedbackList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feedbackItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.feedbackBullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.feedbackBullet.success {
+  background-color: #10b981;
+}
+
+.feedbackBullet.warning {
+  background-color: #f59e0b;
+}
+
+/* 상세 피드백 */
+.detailedFeedback {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.detailedTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.detailedContent {
+  color: #374151;
+  line-height: 1.6;
+}
+
+.feedbackParagraph {
+  margin-bottom: 1rem;
+}
+
+.feedbackParagraph:last-child {
+  margin-bottom: 0;
+}
+
+/* 추천사항 */
+.recommendations {
+  background: #eff6ff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.recommendationsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recommendationsIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #2563eb;
+}
+
+.recommendationsTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .recommendationsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recommendationCard {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.recommendationTitle {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.recommendationText {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* AI 추천 면접 질문 */
+.interviewQuestions {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.interviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .interviewHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.interviewTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.interviewIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #9333ea;
+}
+
+.interviewTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.interviewStartButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #16a34a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.interviewStartButton:hover {
+  background-color: #15803d;
+}
+
+@media (max-width: 768px) {
+  .interviewStartButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.interviewStartButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.questionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.questionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.questionItem:hover {
+  background-color: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  .questionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.questionNumber {
+  background-color: #ede9fe;
+  color: #7c3aed;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+}
+
+.questionText {
+  color: #374151;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.interviewTip {
+  background-color: #faf5ff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.tipHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tipIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9333ea;
+}
+
+.tipTitle {
+  font-weight: 600;
+  color: #581c87;
+}
+
+.tipText {
+  color: #7c3aed;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
